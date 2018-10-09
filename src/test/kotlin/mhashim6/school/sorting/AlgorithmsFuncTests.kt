@@ -33,14 +33,6 @@ class AlgorithmsFuncTests {
     }
 
     @Test
-    fun recursiveMergeTest() {
-        randomIntArray(size = 10000).let { sample ->
-            println("original:\n${sample.asList()}")
-            println(sample.sortWith { recursiveMergeSort })
-        }
-    }
-
-    @Test
     fun autoPickTest() {
         randomIntArray(size = 10000)
                 .sortWith(autoPickAlgorithmFactory)

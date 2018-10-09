@@ -39,18 +39,11 @@ class AlgorithmsOOPTests {
     }
 
     @Test
-    fun recursiveMergeTest() {
-        val sorter = Sorter.create(algorithm = SortingStrategy.recursiveMerge())
-        val sample = randomIntArray(size = 10000)
-
-        println("original:\n${sample.asList()}")
-        println(sorter.sort(sample))
-    }
-
-    @Test
     fun autoPickTest() {
-        var sorter = Sorter.create(AlgorithmFactory.autoPick(randomIntArray(size = 10000)))
+        val sample = randomIntArray(size = 10000)
+        var sorter = Sorter.create(AlgorithmFactory.autoPick(sample))
         Assert.assertTrue(sorter.algorithm.javaClass.simpleName == SortingStrategy.merge().javaClass.simpleName)
+        sorter.sort(sample).let(::println)
 
         sorter = Sorter.create(AlgorithmFactory.autoPick(randomIntArray(size = 1)))
         Assert.assertTrue(sorter.algorithm.javaClass.simpleName == SortingStrategy.noSort().javaClass.simpleName)
