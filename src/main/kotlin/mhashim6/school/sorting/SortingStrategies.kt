@@ -87,6 +87,7 @@ private class BubbleStrategy : SortingStrategy {
 
 /**
  * Merge sort algorithm that uses recursion in it's merge method.
+ * horrible performance on the jvm, but it should be fine in actual functional languages.
  * @author mhashim6 on 08/10/2018
  */
 private class RecursiveMergeStrategy : SortingStrategy {

@@ -8,6 +8,7 @@ import java.util.*
 
 /**
  * measures the running time of the given action in milliseconds.
+ * @return Pair of the result of the action and it's execution time.
  */
 inline fun <T> executionTimeOf(action: () -> T): Pair<T, Long> {
     val start = System.currentTimeMillis()
