@@ -15,6 +15,7 @@ interface SortingStrategy {
         fun merge(): SortingStrategy = MergeStrategy()
         fun bubble(): SortingStrategy = BubbleStrategy()
         fun recursiveMerge(): SortingStrategy = RecursiveMergeStrategy()
+        fun noSort(): SortingStrategy = NoSortingStrategy()
     }
 }
 
@@ -119,4 +120,13 @@ private class RecursiveMergeStrategy : SortingStrategy {
                 intArrayOf(right.first()) + merge(left, right.sliceArray(1 until right.size))
         }
     }
+}
+
+/**
+ * convenience strategy that returns the the same input without sorting.
+ * OOP Approach.
+ * @author mhashim6 on 09/10/2018
+ */
+private class NoSortingStrategy : SortingStrategy {
+    override fun sort(array: IntArray) = array
 }

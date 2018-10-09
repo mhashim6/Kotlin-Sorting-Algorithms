@@ -18,7 +18,7 @@ typealias SortingStrategyFunc = (IntArray) -> IntArray
  * Functional approach.
  * @author mhashim6 on 09/10/2018
  */
-private val insertionStrategy: SortingStrategyFunc = { array ->
+val insertionStrategy: SortingStrategyFunc = { array ->
     for (i in 0 until array.size)
         for (j in i downTo 1)
             if (array[j] < array[j - 1])
@@ -115,3 +115,10 @@ val recursiveMergeStrategy: SortingStrategyFunc = {
 
     sort(it)
 }
+
+/**
+ * convenience strategy that returns the the same input without sorting.
+ * Functional Approach.
+ * @author mhashim6 on 09/10/2018
+ */
+val noSortingStrategy: SortingStrategyFunc = { it }

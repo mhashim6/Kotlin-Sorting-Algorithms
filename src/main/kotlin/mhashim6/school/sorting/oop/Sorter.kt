@@ -1,5 +1,6 @@
 package mhashim6.school.sorting.oop
 
+import com.sun.xml.internal.fastinfoset.algorithm.BuiltInEncodingAlgorithmFactory
 import mhashim6.school.sorting.SortingResult
 import mhashim6.school.sorting.executionTimeOf
 
@@ -13,6 +14,7 @@ interface Sorter {
 
     companion object Factory {
         fun create(algorithm: SortingStrategy): Sorter = SorterImpl(algorithm)
+        fun create(algorithmFactory: AlgorithmFactory): Sorter = SorterImpl(algorithmFactory.pickAlgorithm())
     }
 }
 

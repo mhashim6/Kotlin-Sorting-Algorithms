@@ -26,6 +26,13 @@ fun IntArray.swap(i: Int, j: Int) {
     this[i] = temp
 }
 
+fun IntArray.isSorted(): Boolean {
+    for (i in 0 until this.size)
+        if (this[i] > this[i + 1])
+            return false
+    return true
+}
+
 private val random = Random()
 fun randomIntArray(size: Int, bound: Int = size): IntArray {
     val array = IntArray(size)
