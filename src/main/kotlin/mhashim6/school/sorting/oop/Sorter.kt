@@ -1,4 +1,7 @@
-package mhashim6.school.sorting
+package mhashim6.school.sorting.oop
+
+import mhashim6.school.sorting.SortingResult
+import mhashim6.school.sorting.executionTimeOf
 
 /**
  *@author mhashim6 on 08/10/2018

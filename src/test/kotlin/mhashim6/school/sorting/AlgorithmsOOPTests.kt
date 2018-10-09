@@ -1,11 +1,13 @@
 package mhashim6.school.sorting
 
+import mhashim6.school.sorting.oop.Sorter
+import mhashim6.school.sorting.oop.SortingStrategy
 import org.junit.Test
 
 /**
  *@author mhashim6 on 08/10/2018
  */
-class AlgorithmsTests {
+class AlgorithmsOOPTests {
 
     private val sorter = Sorter.create(algorithm = SortingStrategy.insertion())
     private val sample = randomIntArray(size = 10000)
