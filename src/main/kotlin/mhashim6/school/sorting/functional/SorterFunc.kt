@@ -6,9 +6,8 @@ import mhashim6.school.sorting.executionTimeOf
 /**
  *@author mhashim6 on 09/10/2018
  */
-
-fun IntArray.sort(array: IntArray, algorithmFactory: AlgorithmFactoryFunc): SortingResult {
-    val algorithm = algorithmFactory(array)
-    val (sortedArray, time) = executionTimeOf { algorithm(array) }
+inline fun IntArray.sortWith(algorithmFactory: AlgorithmFactoryFunc): SortingResult {
+    val algorithm = algorithmFactory(this)
+    val (sortedArray, time) = executionTimeOf { algorithm(this) }
     return SortingResult.create(sortedArray, time)
 }

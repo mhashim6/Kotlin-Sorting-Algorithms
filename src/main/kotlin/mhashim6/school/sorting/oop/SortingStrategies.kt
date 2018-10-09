@@ -2,7 +2,7 @@ package mhashim6.school.sorting.oop
 
 import mhashim6.school.sorting.swap
 
-/** could be modified using generics to sort any kind of a comparable object,
+/** could be modified using generics to sortWith any kind of a comparable object,
  *  but for the sake of performance and simplicity, an IntArray will do.
  *  OOP approach.
  *  @author mhashim6 on 08/10/2018
@@ -20,7 +20,7 @@ interface SortingStrategy {
 }
 
 /**
- * Insertion sort algorithm.
+ * Insertion sortWith algorithm.
  * OOP approach.
  * @author mhashim6 on 08/10/2018
  */
@@ -35,7 +35,7 @@ private class InsertionStrategy : SortingStrategy {
 }
 
 /**
- * Merge sort algorithm.
+ * Merge sortWith algorithm.
  * OOP Approach
  * @author mhashim6 on 08/10/2018
  */
@@ -77,7 +77,7 @@ private class MergeStrategy : SortingStrategy {
 }
 
 /**
- * Bubble sort algorithm.
+ * Bubble sortWith algorithm.
  * OOP Approach
  * @author mhashim6 on 08/10/2018
  */
@@ -93,7 +93,7 @@ private class BubbleStrategy : SortingStrategy {
 }
 
 /**
- * Merge sort algorithm that uses recursion in it's merge method.
+ * Merge sortWith algorithm that uses recursion in it's merge method.
  * horrible performance on the jvm, but it should be fine in actual functional languages.
  * OOP Approach.
  * @author mhashim6 on 08/10/2018

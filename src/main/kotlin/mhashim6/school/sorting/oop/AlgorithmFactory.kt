@@ -10,17 +10,17 @@ interface AlgorithmFactory {
     val array: IntArray
     fun pickAlgorithm(): SortingStrategy
 
-    companion object Factory {
-        fun create(array: IntArray): AlgorithmFactory = DefaultAlgorithmFactory(array)
+    companion object Factories {
+        fun autoPick(array: IntArray): AlgorithmFactory = AutoPickAlgorithmFactory(array)
     }
 }
 
-class DefaultAlgorithmFactory(override val array: IntArray) : AlgorithmFactory {
+private class AutoPickAlgorithmFactory(override val array: IntArray) : AlgorithmFactory {
     override fun pickAlgorithm(): SortingStrategy {
         return when {
             array.size <= 1 -> SortingStrategy.noSort()
             array.isSorted() -> SortingStrategy.noSort()
-            array.size > 10000 -> SortingStrategy.merge()
+            array.size >= 10000 -> SortingStrategy.merge()
             else -> SortingStrategy.insertion()
         }
     }

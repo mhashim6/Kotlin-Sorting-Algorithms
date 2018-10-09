@@ -7,11 +7,11 @@ import mhashim6.school.sorting.isSorted
  */
 typealias AlgorithmFactoryFunc = (IntArray) -> SortingStrategyFunc
 
-val defaultAlgorithmFactory: AlgorithmFactoryFunc = {
+val autoPickAlgorithmFactory: AlgorithmFactoryFunc = {
     when {
-        it.size <= 1 -> insertionStrategy
+        it.size <= 1 -> insertionSort
         it.isSorted() -> noSortingStrategy
-        it.size > 10000 -> mergeStrategy
-        else -> insertionStrategy
+        it.size >= 10000 -> mergeSort
+        else -> insertionSort
     }
 }

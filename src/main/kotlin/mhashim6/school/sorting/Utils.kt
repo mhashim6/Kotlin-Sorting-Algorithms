@@ -1,7 +1,5 @@
 package mhashim6.school.sorting
 
-import java.util.*
-
 /**
  *@author mhashim6 on 08/10/2018
  */
@@ -27,16 +25,9 @@ fun IntArray.swap(i: Int, j: Int) {
 }
 
 fun IntArray.isSorted(): Boolean {
-    for (i in 0 until this.size)
+    for (i in 0 until this.size - 1)
         if (this[i] > this[i + 1])
             return false
     return true
 }
 
-private val random = Random()
-fun randomIntArray(size: Int, bound: Int = size): IntArray {
-    val array = IntArray(size)
-    for (i in 0 until size)
-        array[i] = random.nextInt(bound)
-    return array
-}

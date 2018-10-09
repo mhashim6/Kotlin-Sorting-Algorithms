@@ -8,7 +8,7 @@ interface SortingResult {
     val sortedArray: IntArray
     val executionTime: Long
 
-    companion object FACTORY {
+    companion object Factory {
         fun create(sortedArray: IntArray, interval: Long): SortingResult = SortingResultImpl(sortedArray, interval)
     }
 }

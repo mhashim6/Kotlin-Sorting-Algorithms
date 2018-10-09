@@ -6,7 +6,7 @@ import mhashim6.school.sorting.swap
  *@author mhashim6 on 09/10/2018
  */
 
-/** could be modified using generics to sort any kind of a Comparable object,
+/** could be modified using generics to sortWith any kind of a Comparable object,
  *  but for the sake of performance and simplicity, an IntArray will do.
  *  Functional approach.
  *  @author mhashim6 on 09/10/2018
@@ -14,11 +14,11 @@ import mhashim6.school.sorting.swap
 typealias SortingStrategyFunc = (IntArray) -> IntArray
 
 /**
- * Insertion sort algorithm.
+ * Insertion sortWith algorithm.
  * Functional approach.
  * @author mhashim6 on 09/10/2018
  */
-val insertionStrategy: SortingStrategyFunc = { array ->
+val insertionSort: SortingStrategyFunc = { array ->
     for (i in 0 until array.size)
         for (j in i downTo 1)
             if (array[j] < array[j - 1])
@@ -28,11 +28,11 @@ val insertionStrategy: SortingStrategyFunc = { array ->
 }
 
 /**
- * Merge sort algorithm.
+ * Merge sortWith algorithm.
  * Functional Approach
  * @author mhashim6 on 09/10/2018
  */
-val mergeStrategy: SortingStrategyFunc = {
+val mergeSort: SortingStrategyFunc = {
     fun merge(left: IntArray, right: IntArray): IntArray {
         val size = left.size + right.size
         val merged = IntArray(size)
@@ -71,11 +71,11 @@ val mergeStrategy: SortingStrategyFunc = {
 }
 
 /**
- * Bubble sort algorithm.
+ * Bubble sortWith algorithm.
  * Functional Approach
  * @author mhashim6 on 09/10/2018
  */
-val bubbleStrategy: SortingStrategyFunc = { array ->
+val bubbleSort: SortingStrategyFunc = { array ->
     for (i in 0 until array.size)
         for (j in 0 until (array.size - 1))
             if (array[j] > array[j + 1])
@@ -85,12 +85,12 @@ val bubbleStrategy: SortingStrategyFunc = { array ->
 }
 
 /**
- * Merge sort algorithm that uses recursion in it's merge method.
+ * Merge sortWith algorithm that uses recursion in it's merge method.
  * horrible performance on the jvm, but it should be fine in actual functional languages.
  * Functional Approach
  * @author mhashim6 on 09/10/2018
  */
-val recursiveMergeStrategy: SortingStrategyFunc = {
+val recursiveMergeSort: SortingStrategyFunc = {
     fun merge(left: IntArray, right: IntArray): IntArray {
         return when {
             left.isEmpty() -> right
