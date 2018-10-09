@@ -13,29 +13,23 @@ class AlgorithmsOOPTests {
 
     @Test
     fun insertionTest() {
-        val sorter = Sorter.create(algorithm = SortingStrategy.insertion())
-        val sample = randomIntArray(size = 10000)
-
-        println("original:\n${sample.asList()}")
-        println(sorter.sort(sample))
+        Sorter.create(algorithm = SortingStrategy.insertion())
+                .sort(randomIntArray(size = 10000))
+                .also(::println)
     }
 
     @Test
     fun mergeTest() {
-        val sorter = Sorter.create(algorithm = SortingStrategy.merge())
-        val sample = randomIntArray(size = 10000)
-
-        println("original:\n${sample.asList()}")
-        println(sorter.sort(sample))
+        Sorter.create(algorithm = SortingStrategy.merge())
+                .sort(randomIntArray(size = 10000))
+                .also(::println)
     }
 
     @Test
     fun bubbleTest() {
-        val sorter = Sorter.create(algorithm = SortingStrategy.bubble())
-        val sample = randomIntArray(size = 10000)
-
-        println("original:\n${sample.asList()}")
-        println(sorter.sort(sample))
+        Sorter.create(algorithm = SortingStrategy.bubble())
+                .sort(randomIntArray(size = 10000))
+                .also(::println)
     }
 
     @Test

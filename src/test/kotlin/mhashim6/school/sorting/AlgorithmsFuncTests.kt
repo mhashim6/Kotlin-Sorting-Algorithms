@@ -10,32 +10,29 @@ class AlgorithmsFuncTests {
 
     @Test
     fun insertionTest() {
-        randomIntArray(size = 10000).let { sample ->
-            println("original:\n${sample.asList()}")
-            println(sample.sortWith { insertionSort })
-        }
+        randomIntArray(size = 10000)
+                .sortWith { insertionSort }
+                .also(::println)
     }
 
     @Test
     fun mergeTest() {
-        randomIntArray(size = 10000).let { sample ->
-            println("original:\n${sample.asList()}")
-            println(sample.sortWith { mergeSort })
-        }
+        randomIntArray(size = 10000)
+                .sortWith { mergeSort }
+                .also(::println)
     }
 
     @Test
     fun bubbleTest() {
-        randomIntArray(size = 10000).let { sample ->
-            println("original:\n${sample.asList()}")
-            println(sample.sortWith { bubbleSort })
-        }
-    }
-
-    @Test
-    fun autoPickTest() {
         randomIntArray(size = 10000)
-                .sortWith(autoPickAlgorithmFactory)
+                .sortWith { bubbleSort }
                 .also(::println)
     }
+}
+
+@Test
+fun autoPickTest() {
+    randomIntArray(size = 10000)
+            .sortWith(autoPickAlgorithmFactory)
+            .also(::println)
 }
