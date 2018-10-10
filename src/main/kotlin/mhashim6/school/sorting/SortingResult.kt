@@ -15,6 +15,6 @@ interface SortingResult {
 
 private class SortingResultImpl(override val sortedArray: IntArray, override val executionTime: Long) : SortingResult {
     override fun toString(): String {
-    return "sorted:\n${sortedArray.asList()}\ntime: $executionTime milliseconds."
+        return "sorted:\n${sortedArray.asList()}\ntime: $executionTime milliseconds."
     }
 }

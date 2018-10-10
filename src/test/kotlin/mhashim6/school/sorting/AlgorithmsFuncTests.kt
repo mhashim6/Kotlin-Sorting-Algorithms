@@ -28,11 +28,11 @@ class AlgorithmsFuncTests {
                 .sortWith { bubbleSort }
                 .also(::println)
     }
-}
 
-@Test
-fun autoPickTest() {
-    randomIntArray(size = 10000)
-            .sortWith(autoPickAlgorithmFactory)
-            .also(::println)
+    @Test
+    fun autoPickTest() {
+        randomIntArray(size = 10000)
+                .sortWith(autoPickAlgorithmFactory)
+                .also(::println)
+    }
 }
