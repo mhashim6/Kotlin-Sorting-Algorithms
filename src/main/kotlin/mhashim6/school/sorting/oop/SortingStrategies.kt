@@ -20,7 +20,6 @@ interface SortingStrategy {
 
 /**
  * Insertion sort algorithm.
- * @author mhashim6 on 08/10/2018
  */
 private class InsertionStrategy : SortingStrategy {
     override fun sort(array: IntArray): IntArray {
@@ -34,7 +33,6 @@ private class InsertionStrategy : SortingStrategy {
 
 /**
  * Merge sort algorithm.
- * @author mhashim6 on 08/10/2018
  */
 private class MergeStrategy : SortingStrategy {
 
@@ -75,7 +73,6 @@ private class MergeStrategy : SortingStrategy {
 
 /**
  * Bubble sort algorithm.
- * @author mhashim6 on 08/10/2018
  */
 private class BubbleStrategy : SortingStrategy {
 
@@ -91,7 +88,6 @@ private class BubbleStrategy : SortingStrategy {
 /**
  * Merge sort algorithm that uses recursion in it's merge method.
  * horrible performance on the jvm, but it should be fine in actual functional languages.
- * @author mhashim6 on 08/10/2018
  */
 private class RecursiveMergeStrategy : SortingStrategy {
     override fun sort(array: IntArray): IntArray {
@@ -119,7 +115,6 @@ private class RecursiveMergeStrategy : SortingStrategy {
 
 /**
  * convenient strategy that returns the the same input without sorting.
- * @author mhashim6 on 09/10/2018
  */
 private class NoSortingStrategy : SortingStrategy {
     override fun sort(array: IntArray) = array

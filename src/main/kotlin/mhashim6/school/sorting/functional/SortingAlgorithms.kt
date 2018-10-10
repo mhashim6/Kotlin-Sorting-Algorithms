@@ -8,13 +8,11 @@ import mhashim6.school.sorting.swap
 
 /** could be modified using generics to sort any kind of a Comparable object,
  *  but for the sake of performance and simplicity, an IntArray will do.
- *  @author mhashim6 on 09/10/2018
  */
 typealias SortingAlgorithm = (IntArray) -> IntArray
 
 /**
  * Insertion sort algorithm.
- * @author mhashim6 on 09/10/2018
  */
 val insertionSort: SortingAlgorithm = { array ->
     for (i in 0 until array.size)
@@ -27,7 +25,6 @@ val insertionSort: SortingAlgorithm = { array ->
 
 /**
  * Merge sort algorithm.
- * @author mhashim6 on 09/10/2018
  */
 val mergeSort: SortingAlgorithm = {
     fun merge(left: IntArray, right: IntArray): IntArray {
@@ -69,7 +66,6 @@ val mergeSort: SortingAlgorithm = {
 
 /**
  * Bubble sort algorithm.
- * @author mhashim6 on 09/10/2018
  */
 val bubbleSort: SortingAlgorithm = { array ->
     for (i in 0 until array.size)
@@ -83,7 +79,6 @@ val bubbleSort: SortingAlgorithm = { array ->
 /**
  * Merge sort algorithm that uses recursion in it's merge method.
  * horrible performance on the jvm, but it should be fine in actual functional languages.
- * @author mhashim6 on 09/10/2018
  */
 val recursiveMergeSort: SortingAlgorithm = {
     fun merge(left: IntArray, right: IntArray): IntArray {
@@ -113,6 +108,5 @@ val recursiveMergeSort: SortingAlgorithm = {
 
 /**
  * convenient function that returns the the same input without sorting.
- * @author mhashim6 on 09/10/2018
  */
 val noSorting: SortingAlgorithm = { it }
