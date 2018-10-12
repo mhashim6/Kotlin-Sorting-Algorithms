@@ -1,6 +1,7 @@
 package mhashim6.school.sorting
 
 import mhashim6.school.sorting.functional.*
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
@@ -13,6 +14,7 @@ class AlgorithmsFuncTests {
         randomIntArray(size = 10000)
                 .sortWith { insertionSort }
                 .also(::println)
+                .finally { assertTrue(it.sortedArray.isSorted()) }
     }
 
     @Test
@@ -20,6 +22,7 @@ class AlgorithmsFuncTests {
         randomIntArray(size = 10000)
                 .sortWith { mergeSort }
                 .also(::println)
+                .finally { assertTrue(it.sortedArray.isSorted()) }
     }
 
     @Test
@@ -27,6 +30,8 @@ class AlgorithmsFuncTests {
         randomIntArray(size = 10000)
                 .sortWith { bubbleSort }
                 .also(::println)
+                .finally { assertTrue(it.sortedArray.isSorted()) }
+
     }
 
     @Test

@@ -14,3 +14,5 @@ fun randomIntArray(size: Int, bound: Int = size): IntArray {
         array[i] = random.nextInt(bound)
     return array
 }
+
+inline fun <T> T.finally(action: (it: T) -> Unit) = this.also { action(this) }

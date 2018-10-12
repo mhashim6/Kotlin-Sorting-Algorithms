@@ -16,6 +16,7 @@ class AlgorithmsOOPTests {
         Sorter.create(algorithm = SortingStrategy.insertion())
                 .sort(randomIntArray(size = 10000))
                 .also(::println)
+                .finally { Assert.assertTrue(it.sortedArray.isSorted()) }
     }
 
     @Test
@@ -23,6 +24,7 @@ class AlgorithmsOOPTests {
         Sorter.create(algorithm = SortingStrategy.merge())
                 .sort(randomIntArray(size = 10000))
                 .also(::println)
+                .finally { Assert.assertTrue(it.sortedArray.isSorted()) }
     }
 
     @Test
@@ -30,6 +32,7 @@ class AlgorithmsOOPTests {
         Sorter.create(algorithm = SortingStrategy.bubble())
                 .sort(randomIntArray(size = 10000))
                 .also(::println)
+                .finally { Assert.assertTrue(it.sortedArray.isSorted()) }
     }
 
     @Test
