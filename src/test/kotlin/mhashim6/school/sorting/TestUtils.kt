@@ -15,4 +15,4 @@ fun randomIntArray(size: Int, bound: Int = size): IntArray {
     return array
 }
 
-inline fun <T> T.finally(action: (it: T) -> Unit) = this.also { action(this) }
+inline fun <T> T.finally(action: (it: T) -> Unit) = action(this)
