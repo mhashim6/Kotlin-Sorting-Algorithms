@@ -35,7 +35,6 @@ private class InsertionStrategy : SortingStrategy {
  * Merge sort algorithm.
  */
 private class MergeStrategy : SortingStrategy {
-
     override fun sort(array: IntArray): IntArray {
         return if (array.size == 1)
             array
@@ -75,7 +74,6 @@ private class MergeStrategy : SortingStrategy {
  * Bubble sort algorithm.
  */
 private class BubbleStrategy : SortingStrategy {
-
     override fun sort(array: IntArray): IntArray {
         for (i in 0 until array.size)
             for (j in 0 until (array.size - 1))

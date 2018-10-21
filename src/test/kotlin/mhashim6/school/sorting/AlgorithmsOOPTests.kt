@@ -36,16 +36,21 @@ class AlgorithmsOOPTests {
     }
 
     @Test
-    fun autoPickTest() {
+    fun autoPickMergeTest() {
         val sample = randomIntArray(size = 10000)
-        var sorter = Sorter.create(AlgorithmFactory.autoPick(sample))
+        val sorter = Sorter.create(AlgorithmFactory.autoPick(sample))
         assertTrue(sorter.algorithm.javaClass.simpleName == SortingStrategy.merge().javaClass.simpleName)
-        sorter.sort(sample).let(::println)
+    }
 
-        sorter = Sorter.create(AlgorithmFactory.autoPick(randomIntArray(size = 1)))
+    @Test
+    fun singleElementTest() {
+        val sorter = Sorter.create(AlgorithmFactory.autoPick(randomIntArray(size = 1)))
         assertTrue(sorter.algorithm.javaClass.simpleName == SortingStrategy.noSort().javaClass.simpleName)
+    }
 
-        sorter = Sorter.create(AlgorithmFactory.autoPick(intArrayOf(1, 1, 5, 6, 10, 45, 60, 78)))
+    @Test
+    fun alreadySortedTest() {
+        val sorter = Sorter.create(AlgorithmFactory.autoPick(intArrayOf(1, 1, 5, 6, 10, 45, 60, 78)))
         assertTrue(sorter.algorithm.javaClass.simpleName == SortingStrategy.noSort().javaClass.simpleName)
     }
 }

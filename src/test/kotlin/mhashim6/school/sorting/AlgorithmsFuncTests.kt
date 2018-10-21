@@ -31,7 +31,6 @@ class AlgorithmsFuncTests {
                 .sortWith { bubbleSort }
                 .also(::println)
                 .finally { assertTrue(it.sortedArray.isSorted()) }
-
     }
 
     @Test
